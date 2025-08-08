@@ -16,8 +16,10 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><button id="toggle-theme" class="theme-toggle">🌙</button></li>
       </ul>
     </nav>
   </header>
@@ -32,42 +34,63 @@
   <section id="about" class="content-section" data-aos="fade-up">
     <h2>About Me</h2>
     <p>Hi, I'm Kevin — a 28-year-old Singaporean Chinese with a growing passion for cybersecurity and tech. I’m currently pursuing a Diploma in Infocomm Security Management at Singapore Polytechnic, where I’m learning how to protect systems, networks, and data from real-world threats.</p>
-
     <p>During my NS with the Singapore Civil Defence Force (SCDF), I was trusted with maintaining key communications systems — that gave me real hands-on experience in managing critical infrastructure under pressure. Later, during my internship at Equinix, I gained exposure to network troubleshooting and cloud services, and saw first-hand how important security is in every part of IT.</p>
-
     <p>I’m certified in networking fundamentals and Windows server administration, and comfortable with Cisco IOS and network troubleshooting. Whether it’s setting up secure infrastructure or digging into a problem, I enjoy the process of figuring things out and making things work.</p>
-
     <p>I believe in doing things properly — clear structure, clean code, secure foundations. I’m always improving and looking to learn from others. If you're in the cybersecurity space or just keen to connect, drop me a message. Always happy to chat tech.</p>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects" class="content-section" data-aos="fade-up">
     <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Portfolio Website</h3>
-        <p>Built with HTML/CSS, GitHub Pages, and AOS animations.</p>
-        <a href="https://github.com/idevonic/ktjx.xyz" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Coming Soon</h3>
-        <p>More projects will be added here as I keep building.</p>
-        <a href="#">Live Demo</a>
-      </div>
+    <div class="projects-grid" id="projectsGrid">
+      <p>Loading projects from GitHub...</p>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Skills Section -->
+  <section id="skills" class="content-section" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box">HTML & CSS</div>
+      <div class="skill-box">JavaScript</div>
+      <div class="skill-box">Network Security</div>
+      <div class="skill-box">Windows Server</div>
+      <div class="skill-box">Cisco IOS</div>
+      <div class="skill-box">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact" class="content-section" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Have an opportunity or just want to say hi?</p>
     <p>Email: <a href="mailto:kevintanjunxian@live.com">kevintanjunxian@live.com</a></p>
   </section>
 
+  <!-- Connect With Me Section -->
+  <section id="connect" class="content-section connect-section" data-aos="fade-up">
+    <h2>Connect with me</h2>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvgqvyye" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Stay Connected</button>
+      <p id="formStatus" class="form-status"></p>
+    </form>
+  </section>
+
   <!-- Footer -->
   <footer>
     <p>© 2025 Kevin Tan – ktjx.xyz</p>
   </footer>
+
+  <!-- Thank You Popup -->
+  <div id="thankYouPopup">
+    <div>
+      <p id="popupMessage">Thanks! I'll be in touch soon.</p>
+      <p id="popupCountdown">Closing in 5 seconds...</p>
+      <button id="popupOkBtn">OK</button>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -79,9 +102,22 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // 🧠 Force scroll to top on refresh
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
+
+    // Theme Toggle Script
+    const toggleButton = document.getElementById('toggle-theme');
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      toggleButton.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', 'light');
   </script>
+  <script src="scripts/github-projects.js"></script>
+  <script src="scripts/form.js"></script>
 </body>
 </html>
