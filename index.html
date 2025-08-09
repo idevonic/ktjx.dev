@@ -45,6 +45,17 @@
     <div class="projects-grid" id="projectsGrid">
       <p>Loading projects from GitHub...</p>
     </div>
+
+    <!-- GitHub Stats Widget -->
+    <div class="github-stats-widget" style="margin-top: 2rem; text-align: center;">
+      <h3>My GitHub Stats</h3>
+      <img
+        id="githubStatsImg"
+        src="https://github-readme-stats.vercel.app/api?username=idevonic&show_icons=true&theme=radical"
+        alt="idevonic's GitHub Stats"
+        style="max-width: 100%; height: auto;"
+      />
+    </div>
   </section>
 
   <!-- Skills Section -->
@@ -65,11 +76,7 @@
     <h2>Contact</h2>
     <p>Have an opportunity or just want to say hi?</p>
     <p>Email: <a href="mailto:kevintanjunxian@live.com">kevintanjunxian@live.com</a></p>
-  </section>
 
-  <!-- Connect With Me Section -->
-  <section id="connect" class="content-section connect-section" data-aos="fade-up">
-    <h2>Connect with me</h2>
     <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvgqvyye" method="POST">
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -80,17 +87,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Kevin Tan – ktjx.xyz</p>
+    <p>© 2025 Kevin Tan – ktjx.dev</p>
   </footer>
-
-  <!-- Thank You Popup -->
-  <div id="thankYouPopup">
-    <div>
-      <p id="popupMessage">Thanks! I'll be in touch soon.</p>
-      <p id="popupCountdown">Closing in 5 seconds...</p>
-      <button id="popupOkBtn">OK</button>
-    </div>
-  </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -105,17 +103,27 @@
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
 
-    // Theme Toggle Script
+    const githubStatsImg = document.getElementById('githubStatsImg');
     const toggleButton = document.getElementById('toggle-theme');
+
+    function updateGitHubStatsTheme(theme) {
+      const baseUrl = "https://github-readme-stats.vercel.app/api?username=idevonic&show_icons=true";
+      const themeParam = theme === 'dark' ? 'radical' : 'default';
+      githubStatsImg.src = `${baseUrl}&theme=${themeParam}`;
+    }
+
+    // Set initial theme and GitHub Stats image
+    document.documentElement.setAttribute('data-theme', 'light');
+    updateGitHubStatsTheme('light');
+    toggleButton.textContent = '🌙';
+
     toggleButton.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       toggleButton.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      updateGitHubStatsTheme(newTheme);
     });
-
-    // Set initial theme
-    document.documentElement.setAttribute('data-theme', 'light');
   </script>
   <script src="scripts/github-projects.js"></script>
   <script src="scripts/form.js"></script>

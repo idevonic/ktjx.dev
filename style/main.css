@@ -6,6 +6,7 @@
   --color-surface: #FAFBFC;
   --color-text: #2E2E2E;
   --color-accent: #BFFFD9;
+  --color-border: #CCC;
 }
 
 [data-theme="dark"] {
@@ -16,6 +17,7 @@
   --color-surface: #1A1A1A;
   --color-text: #E0E0E0;
   --color-accent: #88FFE0;
+  --color-border: #444;
 }
 
 /* Base Reset */
@@ -122,11 +124,6 @@ nav {
   animation: fadeUp 0.8s ease both;
 }
 
-[data-theme="dark"] .content-section {
-  background: linear-gradient(to bottom, var(--color-surface), var(--color-background));
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
 .content-section h2 {
   font-size: 2rem;
   color: var(--color-primary);
@@ -141,17 +138,12 @@ nav {
 }
 
 .project-card {
-  background: linear-gradient(135deg, #ffffff, #f9fcfd);
+  background: linear-gradient(135deg, var(--color-surface), var(--color-background));
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeUp 0.6s ease both;
-}
-
-[data-theme="dark"] .project-card {
-  background: var(--color-surface);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
@@ -212,65 +204,65 @@ nav {
 }
 
 /* Connect With Me Section */
-.connect-section {
-  text-align: center;
-  padding: 60px 2rem;
+#connect {
+  max-width: 600px;
+  margin: 2rem auto 4rem;
+  padding: 2rem;
   background: linear-gradient(135deg, var(--color-surface), var(--color-background));
   border-radius: 18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  text-align: center;
   transition: background 0.3s ease;
 }
 
-[data-theme="dark"] .connect-section {
-  background: linear-gradient(135deg, var(--color-surface), var(--color-background));
+#connect h2 {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .contact-form {
-  max-width: 500px;
-  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.85rem 1rem;
-  border: none;
-  border-radius: 10px;
   font-size: 1rem;
-  background: #ffffff;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
   color: var(--color-text);
-}
-
-[data-theme="dark"] .contact-form input,
-[data-theme="dark"] .contact-form textarea {
-  background: #1f1f1f;
-  color: var(--color-text);
+  background: var(--color-surface);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #888888;
+  color: #888;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary);
 }
 
 .contact-form button {
   background: var(--color-primary);
   color: white;
   font-weight: 600;
-  padding: 0.9rem 1.2rem;
+  padding: 0.95rem 1.4rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-size: 1.1rem;
 }
 
 .contact-form button:hover:not(:disabled) {
@@ -282,10 +274,9 @@ nav {
   cursor: not-allowed;
 }
 
-/* Form status messages */
 .form-status {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-primary);
   min-height: 1.5rem;
@@ -301,7 +292,7 @@ footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #777;
-  background-color: var(--color-surface);
+  background: var(--color-surface);
 }
 
 /* Animations */
@@ -314,6 +305,36 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* GitHub Stats Widget */
+.github-stats-widget {
+  margin-top: 2rem;
+  text-align: center;
+  background: var(--color-surface);
+  padding: 1.5rem 1rem;
+  border-radius: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.github-stats-widget h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.github-stats-widget img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(90, 219, 255, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.github-stats-widget img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 /* Responsive Fixes */
@@ -333,51 +354,12 @@ footer {
     gap: 1rem;
   }
 
-  .contact-form {
-    max-width: 100%;
+  #connect {
+    margin: 1rem 1rem 3rem;
+    padding: 1.5rem;
   }
-}
 
-/* Thank You Popup */
-#thankYouPopup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-#thankYouPopup {
-  display: none; /* hidden initially */
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-#thankYouPopup > div {
-  background: var(--color-surface);
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 320px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-#thankYouPopup #popupCountdown {
-  margin-bottom: 1rem;
-}
-
-#thankYouPopup #popupOkBtn {
-  padding: 0.5rem 1.2rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background: var(--color-primary);
-  color: white;
+  .contact-form button {
+    font-size: 1rem;
+  }
 }
