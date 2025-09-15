@@ -1,0 +1,16 @@
+# Node and build artifacts (if used)
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code config
+.vscode/
+*.code-workspace
