@@ -481,11 +481,12 @@ footer {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ========= TIMELINE ========= */
+/* ========= TIMELINE (Paired Card Design - Natural Image Ratio) ========= */
 .timeline {
   position: relative;
   margin: 0 auto;
   padding: 2rem 0;
+  max-width: 1000px;
 }
 
 .timeline::before {
@@ -494,126 +495,130 @@ footer {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 3px;
-  background: var(--accent-1);
+  width: 2px;
+  background: var(--accent-2);
   transform: translateX(-50%);
 }
 
+/* Timeline Item */
 .timeline-item {
   position: relative;
-  width: 50%;
-  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: flex-start;     /* natural alignment */
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
+/* Icon */
 .timeline-item .timeline-icon {
   position: absolute;
-  top: 1rem;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 42px;
-  height: 42px;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
   background: var(--surface);
-  border: 3px solid var(--accent-1);
+  border: 2px solid var(--accent-1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--accent-2);
   z-index: 2;
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-.timeline-item .timeline-icon:hover {
-  box-shadow: 0 0 16px var(--accent-1), inset 0 0 6px var(--accent-2);
-  transform: scale(1.1);
+/* Media (image card) */
+.timeline-media {
+  flex: 1;
+  max-width: 45%;              /* image never exceeds half */
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  margin-top: 20px;
 }
 
-.timeline-item .timeline-content {
+.timeline-media img {
+  width: 100%;
+  height: auto;                /* ✅ keep natural aspect ratio */
+  display: block;
+  border-radius: 12px;
+}
+
+/* Text card */
+.timeline-content {
+  flex: 1;
   background: var(--surface);
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  margin-top: 38px;
+  border-left: 4px solid var(--accent-1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-top: 20px;
 }
 
-.timeline-item .timeline-content:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+.timeline-year {
+  display: inline-block;
+  background: var(--accent-1);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Odd items → left */
+/* Odd = left image, right text */
 .timeline-item:nth-child(odd) {
-  left: 0;
+  flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  border-left: none;
+  border-right: 4px solid var(--accent-1);
   text-align: right;
 }
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-right: auto;
-}
-.timeline-item:nth-child(odd) .timeline-content::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: -10px;
-  border-width: 10px 0 10px 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent var(--surface);
-}
 
-/* Even items → right */
-.timeline-item:nth-child(even) {
-  left: 50%;
-  text-align: left;
-}
-.timeline-item:nth-child(even) .timeline-content {
-  margin-left: auto;
-}
-.timeline-item:nth-child(even) .timeline-content::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  border-width: 10px 10px 10px 0;
-  border-style: solid;
-  border-color: transparent var(--surface) transparent transparent;
-}
-
-/* ========= Responsive (stack on mobile) ========= */
+/* Mobile view */
 @media (max-width: 768px) {
   .timeline::before {
-    left: 25px;
+    left: 20px;
   }
-
   .timeline-item {
-    width: 100%;
-    padding-left: 70px;
-    text-align: left !important;
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 60px;
   }
-
   .timeline-item .timeline-icon {
-    left: 25px;
+    left: 20px;
     transform: translateX(0);
   }
-
-  .timeline-item .timeline-content {
-    margin: 0;
+  .timeline-media,
+  .timeline-content {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15px;
   }
-
-  .timeline-item .timeline-content::after {
-    display: none;
+  .timeline-content {
+    border-right: none;
+    border-left: 4px solid var(--accent-1);
+    text-align: left;
   }
 }
+/* ========= end of TIMELINE ========= */
 
 /* ========= TIMELINE Scroll Animation ========= */
-.timeline-item .timeline-content {
-  transform: translateX(0);   /* default visible */
+.timeline-content {
+  transform: translateX(0);
   opacity: 1;
   transition: all 0.8s ease;
 }
 
-/* Animation states */
 .timeline-item:nth-child(odd):not(.show) .timeline-content {
   transform: translateX(-40px);
   opacity: 0;
@@ -628,3 +633,42 @@ footer {
   opacity: 1;
 }
 /* ========= end of TIMELINE ========= */
+
+
+/* ========= CREATIVE ARCHIVE / PROJECTS ========= */
+.video-link {
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-link img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+}
+
+.video-link:hover img {
+  transform: scale(1.03);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  pointer-events: none; /* click passes through to link */
+}
+
+.project-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-1);
+  margin-top: -0.2rem;
+}
+
+/* ========= end of CREATIVE ARCHIVE / PROJECTS ========= */
