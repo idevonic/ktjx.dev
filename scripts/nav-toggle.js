@@ -3,27 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("toggle-theme");
   const themeBtnMobile = document.getElementById("toggle-theme-mobile");
 
-  function setTheme(theme) {
+  const setTheme = (theme) => {
     document.documentElement.setAttribute("data-bs-theme", theme);
-    // Optional: update the icon
-    if (themeBtn) themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
-    if (themeBtnMobile) themeBtnMobile.textContent = theme === "dark" ? "☀️" : "🌙";
-    // Optional: persist to localStorage
+    const icon = theme === "dark" ? "☀️" : "🌙";
+    if (themeBtn) themeBtn.textContent = icon;
+    if (themeBtnMobile) themeBtnMobile.textContent = icon;
     localStorage.setItem("theme", theme);
-  }
+  };
 
-  // On first load, pick saved or system theme
-  const saved = localStorage.getItem("theme");
-  if (saved) setTheme(saved);
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) setTheme(savedTheme);
   else if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
+  else setTheme("light");
 
-  // Toggle actions
-  if (themeBtn) themeBtn.onclick = () => {
-    const next = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
-    setTheme(next);
+  const toggleTheme = () => {
+    const current = document.documentElement.getAttribute("data-bs-theme");
+    setTheme(current === "dark" ? "light" : "dark");
   };
-  if (themeBtnMobile) themeBtnMobile.onclick = () => {
-    const next = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
-    setTheme(next);
-  };
+
+  if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+  if (themeBtnMobile) themeBtnMobile.addEventListener("click", toggleTheme);
 });
