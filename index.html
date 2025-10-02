@@ -107,126 +107,150 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="py-5 reveal">
+    <section id="about" class="py-5" data-reveal="fade-up">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2 class="h1 text-primary mb-3">About Me</h2>
-            <p id="about-rest" style="display:none;">
-              My journey started in national service with the Singapore Civil Defence Force, where I worked with critical communication systems. Since then, I’ve explored enterprise networking at NCS and gained data centre exposure at Equinix.<br><br>
-              Currently, I’m pursuing a Diploma in Infocomm Security Management at Singapore Polytechnic. Along the way, I’ve picked up hands-on experience with Cisco IOS, Windows Server, VLANs, and troubleshooting networks. What excites me most is solving real infrastructure challenges and making sure systems are both reliable and secure.<br><br>
-              I’m curious, adaptable, and always eager to learn how technology can be applied to create stronger, safer digital environments.
-            </p>
-          </div>
+        <div class="about-card mx-auto text-center">
+          <h2 class="h1 text-primary mb-4" data-reveal="fade-right">About Me</h2>
+          <p data-reveal="fade-up" id="about-rest">
+            My journey began during national service with the Singapore Civil Defence Force, where I worked with critical communication systems.
+            Since then, I’ve explored enterprise networking at NCS and gained data centre exposure at Equinix.
+            <br><br>
+            I’m currently pursuing a Diploma in Infocomm Security Management at Singapore Polytechnic.
+            Along the way, I’ve built hands-on experience with Cisco IOS, Windows Server, VLANs, and network troubleshooting.
+            What excites me most is tackling real infrastructure challenges and ensuring systems remain both reliable and secure.
+            <br><br>
+            I’m curious, adaptable, and always eager to learn how technology can be applied to build stronger, safer digital environments.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section id="timeline" class="py-5 reveal" aria-label="Timeline">
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-5" aria-label="Timeline">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <h2 class="h1 text-primary mb-5 text-center">My Journey</h2>
+            <h2 class="h1 text-primary mb-5 text-center" data-reveal="fade-up">My Journey</h2>
 
             <div class="timeline" role="list">
-              
-              <!-- ITE Nitec -->
+
+              <!-- 1. ITE Nitec (ODD - Content Left, Media Right) -->
               <div class="timeline-item" role="listitem">
                 <div class="timeline-icon" aria-hidden="true">🎬</div>
-                <div class="timeline-media">
-                  <img src="images/timeline/nitec.jpg" 
-                      alt="ITE College West – Digital Audio & Video Production projects" />
-                </div>
-                <div class="timeline-content">
-                  <span class="timeline-year">2018 – 2020</span>
+                
+                <div class="timeline-content" data-reveal="fade-left">
+                  <div class="timeline-year">2018 – 2020</div>
                   <h3>ITE College West – Nitec in Digital Audio & Video Production</h3>
                   <p>
                     Started in creative media, producing <strong>short films, documentaries, and photography projects</strong>.  
-                    Learned editing, videography, and production teamwork.
+                    Learned editing, videography, and teamwork in production environments.
                   </p>
                   <p class="text-muted small mb-0">
-                    Example project: 
+                    Example project:
                     <a href="https://www.youtube.com/watch?v=jTr3BbGoNQI" target="_blank" rel="noopener">
                       <em>I Am Soccer Girl</em>
-                    </a> – documentary on women’s football in Singapore.
+                    </a> — a documentary on women's football in Singapore.
                   </p>
+                </div>
+                
+                <div class="timeline-media" data-reveal="fade-right">
+                  <img src="images/timeline/nitec.jpg" alt="ITE College West – Digital Audio & Video Production projects" />
                 </div>
               </div>
 
-              <!-- ITE Higher Nitec -->
+              <!-- 2. ITE Higher Nitec (EVEN - Media Left, Content Right) -->
               <div class="timeline-item" role="listitem">
                 <div class="timeline-icon" aria-hidden="true">💻</div>
-                <div class="timeline-media">
-                  <img src="images/timeline/equinix.jpg" 
-                      alt="Equinix SG2 Data Centre racks and operations" />
+                
+                <div class="timeline-media" data-reveal="fade-left">
+                  <img src="images/timeline/higher-nitec.jpg" alt="ITE College West – Higher Nitec in Cyber & Network Security" />
                 </div>
-                <div class="timeline-content">
-                  <span class="timeline-year">2020 – 2022</span>
+                
+                <div class="timeline-content" data-reveal="fade-right">
+                  <div class="timeline-year">2020 – 2022</div>
                   <h3>ITE College West – Higher Nitec in Cyber & Network Security</h3>
                   <p>
                     Transitioned into IT, specialising in <strong>network administration, security, and systems</strong>.  
-                    Explored enterprise IT through practical labs and industry modules.
+                    Built a strong technical foundation through hands-on labs and industry modules.
                   </p>
                   <p class="text-muted small mb-0">
-                    <strong>Internship at Equinix SG2:</strong> Supported Smart Hands, 
-                    cross connects, rack audits, tape backups, and telecom provisioning.
+                    <strong>Internship at Equinix SG2:</strong> Supported Smart Hands,  
+                    cross-connect setup, rack audits, tape backups, and telecom provisioning.
                   </p>
                 </div>
               </div>
 
-              <!-- Ngee Ann Polytechnic -->
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-icon" aria-hidden="true">🎓</div>
-                <div class="timeline-media">
-                  <img src="images/timeline/np.jpg" 
-                      alt="Ngee Ann Polytechnic campus" />
-                </div>
-                <div class="timeline-content">
-                  <span class="timeline-year">2022 – 2023</span>
-                  <h3>Ngee Ann Polytechnic – Cybersecurity & Digital Forensics</h3>
-                  <p>
-                    Continued cybersecurity studies until Year 2.1,  
-                    before transferring to Singapore Polytechnic for a more applied Infocomm Security path.
-                  </p>
-                </div>
-              </div>
-
-              <!-- SCDF -->
+              <!-- 3. SCDF (ODD - Content Left, Media Right) -->
               <div class="timeline-item" role="listitem">
                 <div class="timeline-icon" aria-hidden="true">🔥</div>
-                <div class="timeline-media">
-                  <img src="images/timeline/scdf.jpg" 
-                      alt="SCDF critical communication systems" />
-                </div>
-                <div class="timeline-content">
-                  <span class="timeline-year">2019 – 2021</span>
+                
+                <div class="timeline-content" data-reveal="fade-left">
+                  <div class="timeline-year">2019 – 2021</div>
                   <h3>Singapore Civil Defence Force (National Service)</h3>
                   <p>
-                    Served National Service in SCDF, supporting <strong>critical communication systems</strong> 
-                    used in emergency operations.  
+                    Served National Service in the <strong>Singapore Civil Defence Force (SCDF)</strong>, supporting  
+                    <strong>critical communication systems</strong> used in emergency operations.  
                     Built resilience, adaptability, and discipline in high-pressure environments.
                   </p>
                 </div>
+                
+                <div class="timeline-media" data-reveal="fade-right">
+                  <img src="images/timeline/scdf.jpg" alt="Singapore Civil Defence Force – National Service" />
+                </div>
               </div>
 
-              <!-- Singapore Polytechnic -->
+              <!-- 4. Ngee Ann Polytechnic (EVEN - Media Left, Content Right) -->
               <div class="timeline-item" role="listitem">
                 <div class="timeline-icon" aria-hidden="true">🎓</div>
-                <div class="timeline-media">
-                  <img src="images/timeline/sp.jpg" 
-                      alt="Singapore Polytechnic Infocomm Security Management" loading="lazy" />
+                
+                <div class="timeline-media" data-reveal="fade-left">
+                  <img src="images/timeline/np.jpg" alt="Ngee Ann Polytechnic campus – Cybersecurity & Digital Forensics" />
                 </div>
-                <div class="timeline-content">
-                  <span class="timeline-year">2022 – 2026</span>
+                
+                <div class="timeline-content" data-reveal="fade-right">
+                  <div class="timeline-year">2022 – 2023</div>
+                  <h3>Ngee Ann Polytechnic – Cybersecurity & Digital Forensics</h3>
+                  <p>
+                    Continued cybersecurity studies until Year 2.1, before transferring to  
+                    <strong>Singapore Polytechnic</strong> for a more applied Infocomm Security pathway.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 5. Singapore Polytechnic (ODD - Content Left, Media Right) -->
+              <div class="timeline-item" role="listitem">
+                <div class="timeline-icon" aria-hidden="true">🎓</div>
+                
+                <div class="timeline-content" data-reveal="fade-left">
+                  <div class="timeline-year">2022 – 2026</div>
                   <h3>Singapore Polytechnic – Diploma in Infocomm Security Management</h3>
                   <p>
                     Currently pursuing a diploma in <strong>network security, server administration, and cloud infrastructure</strong>.  
-                    Built hands-on labs and real-world projects such as the <strong>AP Monitoring Dashboard</strong>.
+                    Built full-stack projects such as the <strong>AP Monitoring & WhatsApp Alert Dashboard</strong>.
                   </p>
-                  <p class="text-muted small mb-0">
-                    <strong>2025 – 2026 · Internship at NCS (NUS Campus):</strong>  
-                    Supporting AP provisioning, Cisco ISE upgrades, SolarWinds monitoring, and switch replacements.
+                </div>
+                
+                <div class="timeline-media" data-reveal="fade-right">
+                  <img src="images/timeline/sp.jpg" alt="Singapore Polytechnic – Diploma in Infocomm Security Management" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- 6. NCS Internship (EVEN - Media Left, Content Right) -->
+              <div class="timeline-item" role="listitem">
+                <div class="timeline-icon" aria-hidden="true">🏢</div>
+                
+                <div class="timeline-media" data-reveal="fade-left">
+                  <img src="images/timeline/ncs.jpg" alt="NCS Pte Ltd – Internship at NUS Campus Network Tower" loading="lazy" />
+                </div>
+                
+                <div class="timeline-content" data-reveal="fade-right">
+                  <div class="timeline-year">2025 – 2026</div>
+                  <h3>NCS Pte Ltd – Internship (Deployed at NUS Campus Network Tower)</h3>
+                  <p>
+                    Currently interning at <strong>NCS Pte Ltd</strong>, deployed at the  
+                    <strong>National University of Singapore (NUS) Campus Network Tower</strong>.  
+                    Supporting <strong>AP provisioning, Cisco ISE upgrades, SolarWinds monitoring</strong>,  
+                    and <strong>switch replacements</strong> as part of NCS Infrastructure operations.
                   </p>
                 </div>
               </div>
@@ -239,44 +263,32 @@
 
     <!-- Projects -->
     <section id="projects" class="py-5 reveal">
-      <div class="container text-center">
-        <h2 class="h1 text-primary">Projects</h2>
-        <p class="text-muted mb-4">Some of my featured work and side projects</p>
+      <div class="container">
+        <h2 class="h1 text-primary mb-2 text-center">Projects</h2>
+        <p class="text-muted mb-5 text-center">Some of my featured work and side projects</p>
 
-        <!-- Featured Projects Grid -->
-        <div class="projects-grid mb-5">
-          <!-- AP Monitoring Dashboard -->
-          <div class="project-card text-start">
-            <img src="images/projects/ap-dashboard.png" alt="AP Monitoring Dashboard" class="img-fluid mb-2" style="border-radius:8px;max-width:100%;height:auto;" />
-            <h5 class="fw-bold">📡 AP Monitoring Dashboard</h5>
-            <p class="text-muted">
-              A full-stack dashboard for NUS campus WiFi (NCS internship).  
-              Built with Node.js, TiDB Cloud, Twilio WhatsApp alerts, and Chart.js.
-            </p>
-            <a href="https://github.com/idevonic/AP-Management" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm me-2">GitHub</a>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo</a>
-          </div>
-
-          <!-- Japan Trip Planner -->
-          <div class="project-card text-start">
-            <div class="japan-trip-popup mb-2">
-              <img src="images/projects/japantrip.png" alt="Japan Trip Planner" class="img-fluid" />
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <a href="https://github.com/idevonic/AP-Management" target="_blank" class="project-link">
+            <div class="project-card">
+              <img src="images/projects/ap-dashboard.png" alt="AP Monitoring Dashboard" />
+              <div class="project-card-body">
+                <h5>📡 AP Monitoring Dashboard</h5>
+                <p>Full-stack dashboard for NUS WiFi. Node.js · TiDB Cloud · Twilio WhatsApp alerts</p>
+              </div>
             </div>
-            <h5 class="fw-bold">✈️ Japan Trip Planner</h5>
-            <p class="text-muted">
-              A personal trip-planning app for a 16-day Japan itinerary (2026).  
-              Features cost-splitting, highlight icons, transport breakdowns,  
-              and Wanderlog-style day classification.
-            </p>
-            <a href="https://ktjx-japtrip.vercel.app/" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm me-2">GitHub</a>
-            <a href="https://vercel.com/idevonics-projects/ktjx-japtrip" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo</a>
-          </div>
-        </div>
+          </a>
 
-        <!-- More Projects -->
-        <h3 class="fw-semibold text-primary mb-3">More Projects</h3>
-        <div class="projects-grid" id="projectsGrid" aria-label="More Projects">
-          <div class="col-12 text-muted">Loading projects from GitHub…</div>
+          <!-- Project 2 -->
+          <a href="https://ktjx-japtrip.vercel.app/" target="_blank" class="project-link">
+            <div class="project-card">
+              <img src="images/projects/japantrip.png" alt="Japan Trip Planner" />
+              <div class="project-card-body">
+                <h5>✈️ Japan Trip Planner</h5>
+                <p>16-day Japan itinerary with cost-splitting, highlights, and transport breakdowns</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -286,11 +298,12 @@
       <div class="container text-center">
         <h2 class="h1 text-primary mb-3">Creative Projects (Nitec)</h2>
         <p class="text-muted mb-4">
-          Before specialising in cybersecurity, I studied Digital Audio &amp; Video Production. 
-          Here are a few highlights that helped me build creativity, teamwork, and presentation skills.
+          Before specialising in cybersecurity, I studied <strong>Digital Audio &amp; Video Production</strong> at ITE College West. 
+          These projects strengthened my creativity, teamwork, and storytelling — skills that continue to influence how I design and present my work today.
         </p>
 
         <div class="projects-grid">
+          <!-- Project 1: I Am Soccer Girl -->
           <div class="project-card text-center">
             <a href="https://www.youtube.com/watch?v=jTr3BbGoNQI" target="_blank" rel="noopener" class="video-link d-block position-relative">
               <img src="https://img.youtube.com/vi/jTr3BbGoNQI/hqdefault.jpg" alt="I Am Soccer Girl Documentary thumbnail" class="img-fluid rounded shadow-sm" />
@@ -298,50 +311,71 @@
             </a>
             <h5 class="fw-bold mt-3">I Am Soccer Girl (Short Documentary)</h5>
             <p class="text-muted">
-              A documentary exploring the experiences of girls in Singapore’s soccer scene, 
-              featuring ITE and local club players. Produced during my Nitec in Digital Audio &amp; Video Production at ITE College West.
+              A documentary exploring the experiences of girls in Singapore’s soccer scene — featuring ITE and local club players. 
+              Produced during my Nitec in Digital Audio &amp; Video Production at ITE College West.
             </p>
             <p class="project-role"><strong>My Role:</strong> Assistant Director · Cameraman</p>
+          </div>
+
+          <!-- Project 2: A Fearful Dream -->
+          <div class="project-card text-center">
+            <a href="https://www.youtube.com/watch?v=gckF7wCXnGE" target="_blank" rel="noopener" class="video-link d-block position-relative">
+              <img src="https://img.youtube.com/vi/gckF7wCXnGE/hqdefault.jpg" alt="A Fearful Dream Short Film thumbnail" class="img-fluid rounded shadow-sm" />
+              <span class="play-overlay">&#9658;</span>
+            </a>
+            <h5 class="fw-bold mt-3">A Fearful Dream (Short Film)</h5>
+            <p class="text-muted">
+              A shortlisted entry for the <strong>Sustainable Singapore Blueprint Short Film Competition 2016</strong>. 
+              It delivers a creative message on <strong>environmental awareness and anti-littering</strong> through a child’s surreal dream narrative.
+            </p>
+            <p class="project-role"><strong>My Role:</strong> Director · Cameraman · Audio Editor · AE Designer</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills & Hobbies -->
     <section id="skills" class="py-5 reveal">
       <div class="container text-center">
-        <h2 class="h1 text-primary mb-3">Skills</h2>
-        <div class="d-flex flex-wrap justify-content-center gap-3" aria-label="Skills">
-          <span class="badge skill-badge skill-icon">💻 HTML &amp; CSS</span>
-          <span class="badge skill-badge skill-icon">⚙️ JavaScript</span>
-          <span class="badge skill-badge skill-icon">🔒 Network Security</span>
-          <span class="badge skill-badge skill-icon">🖥️ Windows Server</span>
-          <span class="badge skill-badge skill-icon">📡 Cisco IOS</span>
-          <span class="badge skill-badge skill-icon">🌐 Git &amp; GitHub</span>
+        <h2 class="h1 text-primary mb-5">Skills & Hobbies</h2>
+
+        <div class="skills-hobbies-container d-flex flex-column flex-lg-row justify-content-center align-items-start gap-5">
+
+          <!-- 💻 Technical Skills -->
+          <div class="skills-card flex-fill">
+            <h3 class="fw-bold mb-3">Technical Skills</h3>
+            <div class="badge-grid">
+              <span class="skill-badge"><i>💻</i> HTML & CSS</span>
+              <span class="skill-badge"><i>⚙️</i> JavaScript</span>
+              <span class="skill-badge"><i>🔒</i> Network Security</span>
+              <span class="skill-badge"><i>🖥️</i> Windows Server</span>
+              <span class="skill-badge"><i>📡</i> Cisco IOS</span>
+              <span class="skill-badge"><i>🌐</i> Git & GitHub</span>
+            </div>
+          </div>
+
+          <!-- 🎮 Hobbies & Interests -->
+          <div class="hobbies-card flex-fill">
+            <h3 class="fw-bold mb-3">Hobbies & Interests</h3>
+            <p class="text-muted mb-4">
+              Outside of cybersecurity and development, I enjoy creative and hands-on hobbies that keep me inspired.
+            </p>
+            <div class="badge-grid">
+              <span class="hobby-badge"><i>🎮</i> Gaming</span>
+              <span class="hobby-badge"><i>🏍️</i> Motorcycling</span>
+              <span class="hobby-badge"><i>🐠</i> Fishkeeping</span>
+              <span class="hobby-badge"><i>🦜</i> Parrot Care</span>
+              <span class="hobby-badge"><i>📷</i> Photography</span>
+              <span class="hobby-badge"><i>⌚</i> Watch Modding</span>
+              <span class="hobby-badge"><i>🧳</i> Traveling</span>
+              <span class="hobby-badge"><i>💡</i> UI/UX Design</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Hobbies -->
-    <section id="hobbies" class="py-5 reveal">
-      <div class="container text-center">
-        <h2 class="h1 text-primary mb-3">Hobbies & Interests</h2>
-        <p class="text-muted mb-4">
-          Outside of cybersecurity and development, I enjoy hands-on and creative hobbies that help me unwind and stay inspired.
-        </p>
-
-        <div class="d-flex flex-wrap justify-content-center gap-3" aria-label="Hobbies">
-          <span class="badge hobby-badge">🎮 Gaming & Esports</span>
-          <span class="badge hobby-badge">🏍️ Motorcycling</span>
-          <span class="badge hobby-badge">🐠 Fishkeeping</span>
-          <span class="badge hobby-badge">🦜 Parrot Care</span>
-          <span class="badge hobby-badge">📷 Photography</span>
-          <span class="badge hobby-badge">⌚ Watch Modding</span>
-          <span class="badge hobby-badge">🧳 Traveling (Japan ✈️)</span>
-          <span class="badge hobby-badge">💡 UI/UX Design</span>
-        </div>
-      </div>
-    </section>
 
     <!-- Contact -->
     <section id="contact" class="py-5 reveal">
@@ -396,6 +430,7 @@
   <script src="scripts/scroll-reveal.js"></script>
   <script src="scripts/nav-toggle.js"></script>
   <script src="scripts/typewriter.js"></script>
+  <script src="scripts/project-slider.js"></script>
   <script>
     // Contact form validation
     document.addEventListener('DOMContentLoaded', () => {
