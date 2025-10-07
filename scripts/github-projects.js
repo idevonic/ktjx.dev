@@ -1,44 +1,64 @@
-// github-projects.js
-const username = "idevonic";
-const projectGrid = document.getElementById("projectsGrid");
+// scripts/github-projects.js
+async function loadGitHubProjects() {
+  const container = document.getElementById('github-projects');
+  
+  if (!container) {
+    console.log('No github-projects container found');
+    return;
+  }
 
-// Fetch latest 6 public repos (no token needed for public repos)
-fetch(`https://api.github.com/users/${username}/repos?per_page=6&sort=updated`)
-  .then(res => {
-    console.log("GitHub API status:", res.status);
-    if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-    return res.json();
-  })
-  .then(repos => {
-    console.log("Repos fetched:", repos); // Debug log
-    projectGrid.innerHTML = ""; // Clear loading message
+  try {
+    const response = await fetch('https://api.github.com/users/idevonic/repos?per_page=6&sort=updated');
+    
+    console.log('GitHub API status:', response.status);
+    
+    if (!response.ok) {
+      if (response.status === 403) {
+        container.innerHTML = `
+          <div class="text-center p-4">
+            <p class="text-muted mb-3">GitHub API rate limit reached</p>
+            <a href="https://github.com/idevonic" target="_blank" class="btn btn-primary">
+              Visit My GitHub Profile
+            </a>
+          </div>
+        `;
+        return;
+      }
+      throw new Error(`HTTP ${response.status}`);
+    }
 
-    const visibleRepos = repos
-      .filter(repo => !repo.fork)
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-      .slice(0, 6);
-
-    if (visibleRepos.length === 0) {
-      projectGrid.innerHTML = "<div class='text-muted text-center'>No public repos found.</div>";
+    const repos = await response.json();
+    
+    if (repos.length === 0) {
+      container.innerHTML = '<p class="text-muted text-center">No projects found.</p>';
       return;
     }
 
-    visibleRepos.forEach(repo => {
-      const card = document.createElement("div");
-      card.className = "project-card reveal";
+    container.innerHTML = repos.map(repo => `
+      <div class="project-card">
+        <div class="project-card-body">
+          <h5>${repo.name}</h5>
+          <p>${repo.description || 'No description available'}</p>
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            View Project
+          </a>
+        </div>
+      </div>
+    `).join('');
 
-      card.innerHTML = `
-        <h3 class="h5 fw-semibold mb-2">${repo.name}</h3>
-        <p>${repo.description || "No description provided."}</p>
-        <a href="${repo.html_url}" target="_blank" class="fw-medium text-decoration-none">
-          View on GitHub →
+  } catch (error) {
+    console.error('GitHub projects error:', error);
+    container.innerHTML = `
+      <div class="text-center p-4">
+        <p class="text-muted mb-3">Unable to load projects</p>
+        <a href="https://github.com/idevonic" target="_blank" class="btn btn-primary">
+          Visit My GitHub Profile
         </a>
-      `;
+      </div>
+    `;
+  }
+}
 
-      projectGrid.appendChild(card);
-    });
-  })
-  .catch(err => {
-    projectGrid.innerHTML = "<div class='text-danger text-center'>⚠️ Failed to load GitHub projects.</div>";
-    console.error("GitHub API fetch error:", err);
-  });
+if (document.getElementById('github-projects')) {
+  document.addEventListener('DOMContentLoaded', loadGitHubProjects);
+}
