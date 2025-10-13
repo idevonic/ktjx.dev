@@ -121,32 +121,36 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="py-5" data-reveal="fade-up">
-      <div class="container">
-        <div class="card-base mx-auto text-center">
-          <h2 class="h1 text-primary mb-4" data-reveal="fade-right">About Me</h2>
-          <p data-reveal="fade-up" id="about-rest">
-            My journey began during national service with the Singapore Civil Defence Force, where I worked with critical communication systems.
-            Since then, I've explored enterprise networking at NCS and gained data centre exposure at Equinix.
-            <br><br>
-            I'm currently pursuing a Diploma in Infocomm Security Management at Singapore Polytechnic.
-            Along the way, I've built hands-on experience with Cisco IOS, Windows Server, VLANs, and network troubleshooting.
-            What excites me most is tackling real infrastructure challenges and ensuring systems remain both reliable and secure.
-            <br><br>
-            I'm curious, adaptable, and always eager to learn how technology can be applied to build stronger, safer digital environments.
-          </p>
-        </div>
+  <section id="about" class="py-5" data-reveal="fade-up">
+    <div class="container">
+      <div class="card-base mx-auto text-center">
+        <h2 class="section-title" data-reveal="fade-right">
+          <span class="icon">👋</span> About Me
+        </h2>
+        <p class="section-subtitle" data-reveal="fade-up">
+          My journey began during national service with the Singapore Civil Defence Force, where I worked with critical communication systems.
+          Since then, I've explored enterprise networking at NCS and gained data centre exposure at Equinix.
+        </p>
+        <p data-reveal="fade-up" id="about-rest">
+          I'm currently pursuing a Diploma in Infocomm Security Management at Singapore Polytechnic.
+          Along the way, I've built hands-on experience with Cisco IOS, Windows Server, VLANs, and network troubleshooting.
+          What excites me most is tackling real infrastructure challenges and ensuring systems remain both reliable and secure.
+          <br><br>
+          I'm curious, adaptable, and always eager to learn how technology can be applied to build stronger, safer digital environments.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Timeline Section -->
+    <!-- Timeline -->
     <section id="timeline" class="py-5" aria-labelledby="timeline-heading">
       <div class="container">
         <div class="card-base text-center">
-          <h2 id="timeline-heading" class="h1 text-primary mb-5" data-reveal="fade-up">My Journey</h2>
+          <h2 id="timeline-heading" class="section-title" data-reveal="fade-up">
+            <span class="icon">🚀</span> My Journey
+          </h2>
 
           <div class="timeline" role="list">
-            
             <!-- 1. ITE Nitec -->
             <article class="timeline-item" role="listitem">
               <div class="timeline-icon" aria-label="Video production">
@@ -167,7 +171,10 @@
                 </p>
               </div>
               <div class="timeline-media" data-reveal="fade-right">
-                <img src="images/timeline/nitec.jpg" alt="Students working on video production projects at ITE College West" loading="lazy" />
+                <img src="images/timeline/nitec.jpg" 
+                    alt="Students working on video production projects at ITE College West" 
+                    class="nitec-photo" 
+                    loading="lazy" />
               </div>
             </article>
 
@@ -177,7 +184,9 @@
                 <span aria-hidden="true">💻</span>
               </div>
               <div class="timeline-media" data-reveal="fade-left">
-                <img src="images/timeline/higher-nitec.jpg" alt="Cyber security and networking lab at ITE College West" loading="lazy" />
+                <img src="images/timeline/higher-nitec.jpg" 
+                    alt="ITE Higher Nitec in Cyber & Network Security" 
+                    loading="lazy" />
               </div>
               <div class="timeline-content" data-reveal="fade-right">
                 <div class="timeline-year">2020 – 2022</div>
@@ -186,19 +195,47 @@
                   Transitioned into IT, specialising in <strong>network administration, security, and systems</strong>.  
                   Built a strong technical foundation through hands-on labs and industry modules.
                 </p>
-                <p class="text-muted small mb-0">
-                  <strong>Internship at Equinix SG2:</strong> Supported Smart Hands,  
-                  cross-connect setup, rack audits, tape backups, and telecom provisioning.
-                </p>
               </div>
             </article>
 
-            <!-- 3. SCDF -->
+            <!-- 3. Equinix SG2 Internship -->
+            <article class="timeline-item" role="listitem">
+              <div class="timeline-icon" aria-label="Data center operations">
+                <span aria-hidden="true">🌐</span>
+              </div>
+              <div class="timeline-content" data-reveal="fade-left">
+                <div class="timeline-year">2021 – 2022</div>
+                <h3>Equinix SG2 – Data Center Operations Internship</h3>
+                <p>
+                  Completed internship under the <strong>Smart Hands team</strong> at <strong>Equinix SG2</strong> data center.  
+                  Assisted in <strong>cross-connect setups, rack audits, tape backups, and telecom provisioning</strong>.  
+                  Gained hands-on experience with <strong>server infrastructure, cabling standards, and uptime protocols</strong>.
+                </p>
+              </div>
+              <div class="timeline-media" data-reveal="fade-right">
+                <img
+                  src="images/timeline/equinix.jpg"
+                  alt="Equinix SG2 data center — Smart Hands team on the left with company logo visible on the right wall"
+                  class="equinix-photo"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <!-- 4. SCDF -->
             <article class="timeline-item" role="listitem">
               <div class="timeline-icon" aria-label="Fire and rescue service">
                 <span aria-hidden="true">🔥</span>
               </div>
-              <div class="timeline-content" data-reveal="fade-left">
+              <div class="timeline-media" data-reveal="fade-left">
+                <img
+                  src="images/timeline/scdf.jpg"
+                  alt="Singapore Civil Defence Force — fire station and emergency response vehicles"
+                  class="scdf-photo"
+                  loading="lazy"
+                />
+              </div>
+              <div class="timeline-content" data-reveal="fade-right">
                 <div class="timeline-year">2019 – 2021</div>
                 <h3>Singapore Civil Defence Force (National Service)</h3>
                 <p>
@@ -207,35 +244,40 @@
                   Built resilience, adaptability, and discipline in high-pressure environments.
                 </p>
               </div>
-              <div class="timeline-media" data-reveal="fade-right">
-                <img src="images/timeline/scdf.jpg" alt="SCDF fire station and emergency response vehicles" loading="lazy" />
-              </div>
             </article>
 
-            <!-- 4. Ngee Ann Polytechnic -->
-            <article class="timeline-item" role="listitem">
-              <div class="timeline-icon" aria-label="Education">
-                <span aria-hidden="true">🎓</span>
-              </div>
-              <div class="timeline-media" data-reveal="fade-left">
-                <img src="images/timeline/np.jpg" alt="Ngee Ann Polytechnic campus building and facilities" loading="lazy" />
-              </div>
-              <div class="timeline-content" data-reveal="fade-right">
-                <div class="timeline-year">2022 – 2023</div>
-                <h3>Ngee Ann Polytechnic – Cybersecurity & Digital Forensics</h3>
-                <p>
-                  Continued cybersecurity studies until Year 2.1, before transferring to  
-                  <strong>Singapore Polytechnic</strong> for a more applied Infocomm Security pathway.
-                </p>
-              </div>
-            </article>
-
-            <!-- 5. Singapore Polytechnic -->
+            <!-- 5. Ngee Ann Polytechnic -->
             <article class="timeline-item" role="listitem">
               <div class="timeline-icon" aria-label="Education">
                 <span aria-hidden="true">🎓</span>
               </div>
               <div class="timeline-content" data-reveal="fade-left">
+                <div class="timeline-year">2022 – 2023</div>
+                <h3>Ngee Ann Polytechnic – Diploma in Network Systems & Security (N94)</h3>
+                <p>
+                  Continued cybersecurity studies under the <strong>Network Systems & Security (NSS)</strong> programme, 
+                  later renamed <strong>Diploma in Cybersecurity & Digital Forensics (N94)</strong>. 
+                  Completed up to Year 2.1 before transferring to <strong>Singapore Polytechnic</strong> 
+                  for a more applied Infocomm Security pathway.
+                </p>
+              </div>
+              <div class="timeline-media" data-reveal="fade-right">
+                <img src="images/timeline/np.jpg"
+                    alt="Ngee Ann Polytechnic official logo"
+                    class="fit-logo"
+                    loading="lazy" />
+              </div>
+            </article>
+
+            <!-- 6. Singapore Polytechnic -->
+            <article class="timeline-item" role="listitem">
+              <div class="timeline-icon" aria-label="Education">
+                <span aria-hidden="true">🎓</span>
+              </div>
+              <div class="timeline-media" data-reveal="fade-left">
+                <img src="images/timeline/sp.jpg" alt="Singapore Polytechnic campus and IT facilities" loading="lazy" />
+              </div>
+              <div class="timeline-content" data-reveal="fade-right">
                 <div class="timeline-year">2022 – 2026</div>
                 <h3>Singapore Polytechnic – Diploma in Infocomm Security Management</h3>
                 <p>
@@ -243,20 +285,14 @@
                   Built full-stack projects such as the <strong>AP Monitoring & WhatsApp Alert Dashboard</strong>.
                 </p>
               </div>
-              <div class="timeline-media" data-reveal="fade-right">
-                <img src="images/timeline/sp.jpg" alt="Singapore Polytechnic campus and IT facilities" loading="lazy" />
-              </div>
             </article>
 
-            <!-- 6. NCS Internship -->
+            <!-- 7. NCS Internship -->
             <article class="timeline-item" role="listitem">
               <div class="timeline-icon" aria-label="Professional work">
                 <span aria-hidden="true">🏢</span>
               </div>
-              <div class="timeline-media" data-reveal="fade-left">
-                <img src="images/timeline/ncs.jpg" alt="NUS Campus Network Tower and NCS workplace" loading="lazy" />
-              </div>
-              <div class="timeline-content" data-reveal="fade-right">
+              <div class="timeline-content" data-reveal="fade-left">
                 <div class="timeline-year">2025 – 2026</div>
                 <h3>NCS Pte Ltd – Internship (Deployed at NUS Campus Network Tower)</h3>
                 <p>
@@ -266,8 +302,10 @@
                   and <strong>switch replacements</strong> as part of NCS Infrastructure operations.
                 </p>
               </div>
+              <div class="timeline-media" data-reveal="fade-right">
+                <img src="images/timeline/ncs.jpg" alt="NUS Campus Network Tower and NCS workplace" loading="lazy" />
+              </div>
             </article>
-
           </div>
         </div>
       </div>
@@ -277,31 +315,104 @@
     <section id="projects" class="py-5 reveal">
       <div class="container">
         <div class="card-base text-center">
-          <h2 class="h1 text-primary mb-2">Projects</h2>
-          <p class="text-muted mb-5">Some of my featured work and side projects</p>
+          <h2 class="section-title"><span class="icon">⚡</span> Projects</h2>
+          <p class="section-subtitle">Some of my featured work and side projects</p>
 
           <div class="projects-grid">
-            <!-- Project 1 -->
-            <a href="https://github.com/idevonic/AP-Management" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View AP Monitoring Dashboard project on GitHub">
-              <article class="project-card">
-                <img src="images/projects/ap-dashboard.png" alt="Screenshot of AP monitoring dashboard showing WiFi network statistics" loading="lazy" />
-                <div class="project-card-body">
-                  <h3 class="h5"><span aria-hidden="true">📡</span> AP Monitoring Dashboard</h3>
-                  <p>Full-stack dashboard for NUS WiFi. Node.js, TiDB Cloud, Twilio WhatsApp alerts</p>
+            <!-- Project 1: AP Dashboard -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img
+                  src="images/projects/ap-dashboard.png"
+                  alt="Screenshot of AP monitoring dashboard"
+                  loading="lazy"
+                />
+                <span class="project-card-badge">Full-Stack</span>
+              </div>
+              <div class="project-card-body">
+                <h3>📡 AP Monitoring Dashboard</h3>
+                <p>
+                  Real-time WiFi network monitoring dashboard for NUS campus with
+                  automated WhatsApp alerts and cloud database integration.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">TiDB Cloud</span>
+                  <span class="project-tag">Twilio</span>
                 </div>
-              </article>
-            </a>
+                <a
+                  href="https://github.com/idevonic/AP-Management"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn"
+                >
+                  View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
 
-            <!-- Project 2 -->
-            <a href="https://ktjx-japtrip.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Japan Trip Planner project">
-              <article class="project-card">
-                <img src="images/projects/japantrip.png" alt="Screenshot of Japan trip planning website interface" loading="lazy" />
-                <div class="project-card-body">
-                  <h3 class="h5"><span aria-hidden="true">✈️</span> Japan Trip Planner</h3>
-                  <p>16-day Japan itinerary with cost-splitting, highlights, and transport breakdowns</p>
+            <!-- Project 2: Japan Trip Planner -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img
+                  src="images/projects/japantrip.png"
+                  alt="Screenshot of Japan trip planner"
+                  loading="lazy"
+                />
+                <span class="project-card-badge">Web App</span>
+              </div>
+              <div class="project-card-body">
+                <h3>✈️ Japan Trip Planner</h3>
+                <p>
+                  Comprehensive 16-day Japan itinerary with detailed cost
+                  breakdowns, highlights, and transport information.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">HTML</span>
+                  <span class="project-tag">CSS</span>
+                  <span class="project-tag">JavaScript</span>
                 </div>
-              </article>
-            </a>
+                <a
+                  href="https://ktjx-japtrip.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn"
+                >
+                  View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: Badminton Bot -->
+            <article class="project-card">
+              <div class="project-card-image">
+                <img
+                  src="images/projects/badminton-bot.png"
+                  alt="Screenshot of Telegram bot"
+                  loading="lazy"
+                />
+                <span class="project-card-badge">Automation</span>
+              </div>
+              <div class="project-card-body">
+                <h3>🏸 Badminton Ballot Bot</h3>
+                <p>
+                  Automated Telegram bot for ActiveSG badminton ballot reminders
+                  with smart scheduling and SG-style humor.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Google Apps Script</span>
+                  <span class="project-tag">Telegram API</span>
+                </div>
+                <a
+                  href="https://github.com/idevonic/Badminton-Ballot-Bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn"
+                >
+                  View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -311,8 +422,10 @@
     <section id="archive" class="py-5 reveal">
       <div class="container">
         <div class="card-base text-center mx-auto">
-          <h2 class="h1 text-primary mb-3">Creative Projects (Nitec)</h2>
-          <p class="text-muted mb-4">
+          <h2 class="section-title">
+            <span class="icon">🎬</span> Creative Projects (Nitec)
+          </h2>
+          <p class="section-subtitle">
             Before specialising in cybersecurity, I studied <strong>Digital Audio &amp; Video Production</strong> at ITE College West. 
             These projects strengthened my creativity, teamwork, and storytelling — skills that continue to influence how I design and present my work today.
           </p>
@@ -320,8 +433,19 @@
           <div class="projects-grid">
             <!-- Project 1: I Am Soccer Girl -->
             <article class="project-card text-center">
-              <a href="https://www.youtube.com/watch?v=jTr3BbGoNQI" target="_blank" rel="noopener" class="video-link d-block position-relative" aria-label="Watch I Am Soccer Girl documentary on YouTube">
-                <img src="https://img.youtube.com/vi/jTr3BbGoNQI/hqdefault.jpg" alt="Video thumbnail showing female soccer players on a field" class="img-fluid rounded shadow-sm" loading="lazy" />
+              <a
+                href="https://www.youtube.com/watch?v=jTr3BbGoNQI"
+                target="_blank"
+                rel="noopener"
+                class="video-link d-block position-relative"
+                aria-label="Watch I Am Soccer Girl documentary on YouTube"
+              >
+                <img
+                  src="https://img.youtube.com/vi/jTr3BbGoNQI/hqdefault.jpg"
+                  alt="Video thumbnail showing female soccer players on a field"
+                  class="img-fluid rounded shadow-sm"
+                  loading="lazy"
+                />
                 <span class="play-overlay" aria-hidden="true">&#9658;</span>
               </a>
               <h3 class="h5 fw-bold mt-3">I Am Soccer Girl (Short Documentary)</h3>
@@ -334,8 +458,19 @@
 
             <!-- Project 2: A Fearful Dream -->
             <article class="project-card text-center">
-              <a href="https://www.youtube.com/watch?v=gckF7wCXnGE" target="_blank" rel="noopener" class="video-link d-block position-relative" aria-label="Watch A Fearful Dream short film on YouTube">
-                <img src="https://img.youtube.com/vi/gckF7wCXnGE/hqdefault.jpg" alt="Video thumbnail showing a child in a dreamlike environment" class="img-fluid rounded shadow-sm" loading="lazy" />
+              <a
+                href="https://www.youtube.com/watch?v=gckF7wCXnGE"
+                target="_blank"
+                rel="noopener"
+                class="video-link d-block position-relative"
+                aria-label="Watch A Fearful Dream short film on YouTube"
+              >
+                <img
+                  src="https://img.youtube.com/vi/gckF7wCXnGE/hqdefault.jpg"
+                  alt="Video thumbnail showing a child in a dreamlike environment"
+                  class="img-fluid rounded shadow-sm"
+                  loading="lazy"
+                />
                 <span class="play-overlay" aria-hidden="true">&#9658;</span>
               </a>
               <h3 class="h5 fw-bold mt-3">A Fearful Dream (Short Film)</h3>
@@ -343,7 +478,9 @@
                 A shortlisted entry for the <strong>Sustainable Singapore Blueprint Short Film Competition 2016</strong>. 
                 It delivers a creative message on <strong>environmental awareness and anti-littering</strong> through a child's surreal dream narrative.
               </p>
-              <p class="project-role"><strong>My Role:</strong> Director, Cameraman, Audio Editor, AE Designer</p>
+              <p class="project-role">
+                <strong>My Role:</strong> Director, Cameraman, Audio Editor, AE Designer
+              </p>
             </article>
           </div>
         </div>
@@ -354,10 +491,12 @@
     <section id="skills" class="py-5 reveal" aria-labelledby="skills-heading">
       <div class="container">
         <div class="card-base text-center mx-auto">
-          <h2 id="skills-heading" class="h1 text-primary mb-5">Skills & Hobbies</h2>
+          <h2 id="skills-heading" class="section-title">
+            <span class="icon">💡</span> Skills & Hobbies
+          </h2>
 
           <div class="skills-hobbies-container d-flex flex-column flex-lg-row justify-content-center align-items-start gap-5">
-
+            
             <!-- Technical Skills -->
             <div class="skills-card flex-fill">
               <h3 class="fw-bold mb-3">Technical Skills</h3>
@@ -398,11 +537,10 @@
     <section id="contact" class="py-5 reveal">
       <div class="container">
         <div class="card-base text-center mx-auto" style="max-width: 750px;">
-          <h2 class="h1 text-primary mb-3">Contact</h2>
-          <p class="mb-2">Have an opportunity or just want to say hi?</p>
+          <h2 class="section-title"><span class="icon">✉️</span> Contact</h2>
+          <p class="section-subtitle">Have an opportunity or just want to say hi?</p>
           <p>Email: <a href="mailto:kevintanjunxian@live.com" class="fw-semibold">kevintanjunxian@live.com</a></p>
 
-          <!-- Contact Form -->
           <form id="contactForm" class="mt-4" action="https://formspree.io/f/xvgqvyye" method="POST" novalidate>
             <div class="mb-3 text-start">
               <label for="email" class="form-label fw-semibold">Your Email</label>
@@ -421,11 +559,10 @@
 
           <div id="form-status" class="form-status mt-3 text-muted" role="status" aria-live="polite"></div>
 
-          <!-- Social Icons -->
           <div class="mt-4 d-flex gap-4 justify-content-center">
-            <a href="mailto:kevintanjunxian@live.com" class="text-decoration-none text-primary fs-4" aria-label="Send email to Kevin Tan"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-            <a href="https://github.com/idevonic" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-4" aria-label="Visit Kevin Tan's GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/kevin-tan-jun-xian" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-4" aria-label="Visit Kevin Tan's LinkedIn profile"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:kevintanjunxian@live.com" class="text-decoration-none text-primary fs-4" aria-label="Send email to Kevin Tan"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/idevonic" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-4" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/kevin-tan-jun-xian" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-4" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>

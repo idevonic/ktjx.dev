@@ -8,9 +8,7 @@ window.addEventListener('load', () => {
   let vantaEffect = null;
 
   const initVanta = () => {
-    if (vantaEffect) {
-      vantaEffect.destroy();
-    }
+    if (vantaEffect) vantaEffect.destroy();
 
     const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
 
@@ -23,26 +21,30 @@ window.addEventListener('load', () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
+
+      // 🎨 Colors
       color: isDark ? 0x6b9bd8 : 0x3066be,
       backgroundColor: isDark ? 0x1b1e2a : 0xfbfff1,
-      points: 10,
-      maxDistance: 20,
-      spacing: 15,
-      showDots: true,
-      speed: 1.8       // 💨 Increase this value for faster animation (try 0.5–3.0 range)
-});
 
+      // 🧩 Motion & visual feel
+      points: 7,          // fewer points for calmer animation
+      maxDistance: 25,    // longer lines, less movement
+      spacing: 20,        // more space between nodes
+      showDots: false,    // hide dots for smoother aesthetic
+      speed: 0.15,        // reduced motion speed (0.1–0.3 range feels chill)
+    });
 
-    console.log('Vanta.js initialized with your theme colors!');
+    console.log('Vanta.js initialized with calm settings ✨');
   };
 
   initVanta();
 
+  // Reinit when theme toggled
   document.getElementById("toggle-theme")?.addEventListener("click", () => {
-    setTimeout(initVanta, 100);
+    setTimeout(initVanta, 150);
   });
-  
+
   document.getElementById("toggle-theme-mobile")?.addEventListener("click", () => {
-    setTimeout(initVanta, 100);
+    setTimeout(initVanta, 150);
   });
 });
